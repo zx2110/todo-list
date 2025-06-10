@@ -1,0 +1,140 @@
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0fdf4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', 'Malgun Gothic', Arial, sans-serif;
+}
+.todo-container {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(34,197,94,0.10);
+  border-radius: 24px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  border: 2px solid #bbf7d0;
+}
+.todo-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #22c55e;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #bbf7d0;
+  position: relative;
+  padding-left: 0;
+  margin-top: 0;
+}
+.todo-barbell {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 260px;
+  height: 64px;
+  background: url('data:image/svg+xml;utf8,<svg width="260" height="64" viewBox="0 0 260 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="16" width="24" height="32" rx="6" fill="%23166534" stroke="%23111" stroke-width="4"/><rect x="236" y="16" width="24" height="32" rx="6" fill="%23166534" stroke="%23111" stroke-width="4"/><rect x="24" y="12" width="12" height="40" rx="4" fill="#444" stroke="#111" stroke-width="2"/><rect x="224" y="12" width="12" height="40" rx="4" fill="#444" stroke="#111" stroke-width="2"/><rect x="36" y="8" width="10" height="48" rx="3" fill="#888" stroke="#111" stroke-width="2"/><rect x="214" y="8" width="10" height="48" rx="3" fill="#888" stroke="#111" stroke-width="2"/><rect x="46" y="6" width="8" height="52" rx="2" fill="#bbb" stroke="#111" stroke-width="2"/><rect x="206" y="6" width="8" height="52" rx="2" fill="#bbb" stroke="#111" stroke-width="2"/><rect x="54" y="4" width="8" height="56" rx="2" fill="#e5e5e5" stroke="#111" stroke-width="2"/><rect x="198" y="4" width="8" height="56" rx="2" fill="#e5e5e5" stroke="#111" stroke-width="2"/><rect x="62" y="28" width="136" height="8" rx="4" fill="#222" stroke="#111" stroke-width="2"/></svg>') no-repeat center/contain;
+}
+#todo-form {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+#todo-input {
+  flex: 1;
+  border: 2px solid #bbf7d0;
+  border-radius: 12px 0 0 12px;
+  padding: 0.7rem 1.1rem;
+  outline: none;
+  font-size: 1.1rem;
+  background: #f0fdf4;
+  color: #166534;
+}
+#todo-input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px #bbf7d0;
+}
+#todo-form button {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 0 1.4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px #bbf7d0;
+}
+#todo-form button:hover {
+  background: #16a34a;
+}
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  background: #f0fdf4;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #bbf7d0;
+  margin-bottom: 0.7rem;
+  border-left: 6px solid #22c55e;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+}
+.todo-item::after {
+  display: none;
+}
+.todo-item.checked {
+  background: #bbf7d0;
+  border-left: 6px solid #16a34a;
+}
+.todo-item.checked::after {
+  opacity: 0.45;
+}
+.todo-text {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #166534;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+.todo-text.checked {
+  color: #6ee7b7;
+  text-decoration: line-through;
+}
+.todo-text::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #22c55e;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  background: #fff;
+  transition: background 0.2s, border-color 0.2s;
+}
+.todo-text.checked::before {
+  background: #22c55e url('data:image/svg+xml;utf8,<svg fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>') center/16px 16px no-repeat;
+  border-color: #16a34a;
+}
+.delete-btn {
+  margin-left: 1rem;
+  color: #ef4444;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.delete-btn:hover {
+  color: #b91c1c;
+}
